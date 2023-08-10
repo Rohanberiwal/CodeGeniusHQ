@@ -41,4 +41,17 @@ class Solution:
                 num -= val[i]
             i += 1
         return roman_numeral
-
+        
+# leetcode problem 344 
+class Solution(object):
+    def reverseString(self, s):
+        s = s.reverse()
+        return s 
+# LEETCODE 65
+class Solution:
+    def isNumber(self, s: str) -> bool:
+        for i in s :
+            if s.isdigit() or type(s)==float :
+                return True 
+            else :
+                return False 
