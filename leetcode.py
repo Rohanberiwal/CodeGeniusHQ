@@ -118,4 +118,76 @@ class Solution:
             i += 1
             
         return result
+# leetcode 414 
+nums = sorted(list(set(nums)))
+        if len(nums) > 2:
+            return nums[-3]
+        return nums[-1]
+#leetcode 378
+class Solution:
+    def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+            m = len(matrix)
+            n = len(matrix[0])
+            list = []
+            for i in range(0,m) :
+                for j in range(0,n) :
+                    list.append(matrix[i][j])
+            list.sort()
+            return list[k-1]
+#leetcode 373 heap  
+class Solution:
+    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        pqueue = [(nums1[0] + nums2[0], 0, 0)]
+        pairs = []
+        while pqueue and len(pairs) < k:
+            _, u, v = heapq.heappop(pqueue)
+            pairs.append([nums1[u], nums2[v]])
+            if v == 0 and u + 1 < len(nums1):
+                heapq.heappush(pqueue, (nums1[u+1] + nums2[v], u + 1, v))
+            if v + 1 < len(nums2):
+                heapq.heappush(pqueue, (nums1[u] + nums2[v+1], u, v + 1))
+        return pairs 
+# greatest common divisor of the substring
+class Solution:
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        n,m = len(str1), len(str2)
+        if str1 == str2:
+            return str1
+
+        if m > n:
+            str1, str2 = str2, str1
+            n,m = m,n
         
+        if str1.startswith(str2):
+            return self.gcdOfStrings(str1[m:], str2)
+        
+        return ""
+# leetcode 1952 
+class Solution:
+    def isThree(self, n: int) -> bool:
+        listnew = []
+        for i in  range(1,n+1) :
+            if n%i==0 :
+                listnew.append(i)
+        if len(listnew)==3 :
+            return True 
+        else : 
+            return False 
+# gcd of max and min array 
+class Solution:
+    def findGCD(self, nums: List[int]) -> int:
+        nums.sort()
+        max = nums[len(nums)-1]
+        min = nums[0] 
+        return gcd(min,max)
+# temperature conversion 
+
+class Solution:
+    def convertTemperature(self, celsius: float) -> List[float]:
+        listtemp = []
+        Kelvin = celsius + 273.15
+        Fahrenheit = celsius * 1.80 + 32.00
+        listtemp.append(Kelvin)
+        listtemp.append(Fahrenheit)
+        return listtemp 
+
