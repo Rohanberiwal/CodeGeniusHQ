@@ -190,4 +190,15 @@ class Solution:
         listtemp.append(Kelvin)
         listtemp.append(Fahrenheit)
         return listtemp 
+# leetcode 65 valid number 
+class Solution:
+    def isNumber(self, s: str) -> bool:
+        try:
+            float(s)
+            if "inf" in s.lower() or "nan" in s.lower():
+                return False
+            return True
+        except:
+            return False
+        
 
