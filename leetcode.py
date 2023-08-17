@@ -200,5 +200,44 @@ class Solution:
             return True
         except:
             return False
-        
+# leetcode 507 
+class Solution:
+    def checkPerfectNumber(self, num: int) -> bool:
+        sum = 1
+        i = 2
+        while i * i <= num:
+            if num  % i == 0:
+                sum = sum + i + num/i
+            i += 1
+        return (True if sum == num and num!=1 else False)
+#leetcode self dividing number 728
+ l=[]
+        for i in range(left,right+1):
+            s = str(i)
+            if "0" in s:
+                continue
+            d = 1
+            for j in range(len(s)):
+                if i % int(s[j]) != 0:
+                    d = 0
+                    break
+            if d == 1:
+                l.append(i)
+        return l
+#leetcode 2520 
+class Solution:
+    def countDigits(self, num: int) -> int:
+        s = str(num)
+        count = 0 
+        for i in s : 
+            if int(num)%(int(i))==0 :
+                count = count +1 
+        return count 
+# leetcode 2806  // standard algorithm for this 
+
+class Solution:
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+            purchaseAmount = ((purchaseAmount - 5) // 10 ) * 10 + 10
+            result = 100 - purchaseAmount
+            return result      
 
