@@ -190,16 +190,6 @@ class Solution:
         listtemp.append(Kelvin)
         listtemp.append(Fahrenheit)
         return listtemp 
-# leetcode 65 valid number 
-class Solution:
-    def isNumber(self, s: str) -> bool:
-        try:
-            float(s)
-            if "inf" in s.lower() or "nan" in s.lower():
-                return False
-            return True
-        except:
-            return False
 # leetcode 507 
 class Solution:
     def checkPerfectNumber(self, num: int) -> bool:
@@ -239,5 +229,23 @@ class Solution:
     def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
             purchaseAmount = ((purchaseAmount - 5) // 10 ) * 10 + 10
             result = 100 - purchaseAmount
-            return result      
+            return result
+#lleetcode question number 645
+class Solution:
+    def findErrorNums(self, nums: List[int]) -> List[int]:
+                duplicate = 0
+                error = 0
+                n = len(nums)
+                nums = sorted(nums)
+                for i in range(len(nums)):
+                    if nums[i-1] == nums[i]:
+                        duplicate = nums[i]
+                        break
+                nums = list(set(nums))
+
+                for j in range(1, n+1):
+                    if j not in nums:
+                        error = j
+                        break
+                return [duplicate, error]
 
