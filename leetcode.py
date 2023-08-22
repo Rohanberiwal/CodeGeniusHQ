@@ -249,3 +249,58 @@ class Solution:
                         break
                 return [duplicate, error]
 
+#leetcode question 692 using inbuilt functions 
+
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        words = sorted(words)
+        counts = Counter(words)
+        return [word for word, _ in counts.most_common(k)]
+
+#leetcode question  389 the final diffferance 
+arr = list(t)
+        for i in range(len(s)):
+            arr.remove(s[i])
+        return arr[0]
+#leetcode dynamic programmign 
+
+ a=1
+        b=5
+        c=0
+        while (5**a)<=n:
+            c+=n//b
+            a+=1
+            b=b*5
+        return 
+#leetcode hard using the dynamic programming 
+
+class Solution:
+    def countDigitOne(self, n: int) -> int:
+        ans, div, mul = 0, 10, 1
+        while n//mul > 0:
+            ans += (n//div*mul) + min(max(n%div - mul + 1, 0), mul)
+            div *= 10
+            mul *= 10
+        return ans
+# leetcode number of 1 counter in the digit itervative method 
+class Solution:
+    def countDigitOne(self, n: int) -> int:
+        listnew = []
+        combined = []
+        count = 0
+        for i in range(0,n+1) :
+            listnew.append(i)
+        for i in listnew :
+            s = str(i)
+            for i in s  :
+                combined.append(i)
+        for i in combined :
+            if i=="1" :
+                count = count +1 
+        return count
+#leetcode 205 isomorphic string 
+
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t): return False
+        return len(set(s)) == len(set(t)) == len(set(zip(s,t)))     
