@@ -304,3 +304,35 @@ class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         if len(s) != len(t): return False
         return len(set(s)) == len(set(t)) == len(set(zip(s,t)))     
+#leetcode hard using the dynamic programming 
+
+class Solution:
+    def countDigitOne(self, n: int) -> int:
+        ans, div, mul = 0, 10, 1
+        while n//mul > 0:
+            ans += (n//div*mul) + min(max(n%div - mul + 1, 0), mul)
+            div *= 10
+            mul *= 10
+        return ans
+# leetcode number of 1 counter in the digit itervative method 
+class Solution:
+    def countDigitOne(self, n: int) -> int:
+        listnew = []
+        combined = []
+        count = 0
+        for i in range(0,n+1) :
+            listnew.append(i)
+        for i in listnew :
+            s = str(i)
+            for i in s  :
+                combined.append(i)
+        for i in combined :
+            if i=="1" :
+                count = count +1 
+        return count
+#leetcode 205 isomorphic string 
+
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t): return False
+        return len(set(s)) == len(set(t)) == len(set(zip(s,t)))     
