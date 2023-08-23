@@ -330,9 +330,16 @@ class Solution:
             if i=="1" :
                 count = count +1 
         return count
-#leetcode 205 isomorphic string 
+#leetcode 205 isomorphic string  ;
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         if len(s) != len(t): return False
         return len(set(s)) == len(set(t)) == len(set(zip(s,t)))     
+#list comprehension in 118
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        return [
+            [math.comb(i, k) for k in range(i + 1)]
+            for i in range(numRows)
+        ]
