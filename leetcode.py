@@ -343,3 +343,61 @@ class Solution:
             [math.comb(i, k) for k in range(i + 1)]
             for i in range(numRows)
         ]
+#list comprehension in 118
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        return [
+            [math.comb(i, k) for k in range(i + 1)]
+            for i in range(numRows)
+        ]
+
+# leetcode 1200 
+class Solution:
+    def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
+        arr.sort()
+        mindiff = 0
+        actual = []
+        listfordiff = []
+        size = len(arr)
+        for i in range(size) :
+            for j in range(i+1,size) :
+                if arr[j]-arr[i] >mindiff :
+                    mindiff = arr[j] - arr[j]
+
+        for i in range(0,size) :
+            listfordiff = []
+            for j in range(i+1,size) :
+                if arr[j]-arr[i] == mindiff  :
+                    listfordiff.append(arr[i])
+                    listfordiff.append(arr[j])
+            if listfordiff==[] :
+                continue 
+            else :
+                actual.append(listfordiff)
+        return actual 
+# leetcode 1200
+class Solution:
+    def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
+        l = len(arr)
+        arr.sort()
+        answer = [[arr[0], arr[1]]]
+        difference = arr[1]-arr[0]
+        for i in range(2, l):
+            if arr[i] - arr[i-1]==difference: answer.append([arr[i-1], arr[i]])
+            elif arr[i] - arr[i-1]<difference: 
+                answer = [[arr[i-1], arr[i]]]
+                difference = arr[i] - arr[i-1]
+        return answer
+#leetcode 120 error in the test case 13 have to fix that
+class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -> int:
+        total = 0
+        size =  len(triangle)
+        for i in range(0,size-1)  :
+            a  = triangle[i+1][i]
+            b = triangle[i][i] 
+            if(a>b) :
+                total  = total + triangle[i][i] 
+            else :
+                total  = total + triangle[i+1][i]
+        return total
