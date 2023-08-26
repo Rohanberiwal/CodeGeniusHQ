@@ -401,3 +401,140 @@ class Solution:
             else :
                 total  = total + triangle[i+1][i]
         return total
+#leetcode alternative for the unique binary string 
+class Solution:
+    def findDifferentBinaryString(self, nums: List[str]) -> str:
+        listone = []
+        for i in nums :
+            d  = int(i,2)
+            listone.append(i)
+        maxi  = int(max(listone))
+        mini  = int(min(listone))
+        listbin = []
+        for i in range(mini , maxi) :
+            binary_string = bin(i)[2:]
+            listbin.append(binary_string)
+        set1 = set(listbin)
+        set2  = set(nums) 
+        liste = list(set1.intersection(set2))
+        j =  liste[-1]
+        return j 
+#axctual soluton from teh refracne 
+class Solution:
+    def findDifferentBinaryString(self, nums: List[str]) -> str:
+        res = []
+        for i in range(len(nums)):
+            binarynums = nums[i][i]
+            if binarynums == '1':
+                res.append('0')
+            else:
+                res.append('1')
+        return "".join(res)
+#leetcode 459 
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool :
+        return s in (s + s)[1:-1]
+#error on ADD digits leetcode 258 
+
+class Solution:
+    def addDigits(self, num: int) -> int:
+        listx =  []
+        listspare  = []
+        sum = 0
+        while(num!=0) :
+            sum = 0
+            r  = num%10
+            listx.append(r)
+            if(num==0 & len(listx)==1) :
+                num  = sum(listx)
+                listx =[]
+            else  :
+                num =  num//10
+            
+            
+        return sum(listx)    
+#leetcode add the number of 1 bits 
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+          return list(str(bin(n))).count("1")
+#leetcode reverse a bit 
+  return int((("{0:032b}".format(n))[::-1]),2)
+#leetcode 2119
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+        word  = str(num)
+        word = word[::-1]
+        print(word)
+        s  = int(word)
+        print(s)
+        reverse  = str(s)
+        reverse  = reverse[::-1]
+        print(reverse)
+        return int(reverse) == num
+#leetcode intersection of two arrays II
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        c1 = collections.Counter(nums1)
+        c2 = collections.Counter(nums2)
+        
+        res = []
+        for key in c1:
+            if key in c2:
+                res+= [key]*(min(c1[key],c2[key]))
+        return res
+#leetcode fizzbuzz 
+lass Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        listnew = []
+        for i in range(1,n+1):
+            if  i%3 ==0 and i%5==0:
+                listnew.append("FizzBuzz")
+            elif i%3==0 and i%5!=0:
+                listnew.append("Fizz")
+            elif i%5==0 and i%3!=0:
+                listnew.append("Buzz")
+            else :
+                listnew.append(str(i))
+        return listnew
+
+#leetcode 2525
+class Solution:
+    def categorizeBox(self, length: int, width: int, height: int, mass: int) -> str:
+        word = ""
+        flag_1 = False
+        flag_2  = False
+        vol  = length*width*height
+        if length>=10**4 or width >= 10**4 or height >= 10**4 or mass  >= 10**4 or vol >= 10**9 :
+           flag_1  = True
+        if mass >=100  :
+           flag_2  = True 
+        if flag_1 == True and flag_2 == True :
+            word = "Both"
+        elif flag_1 !=True and flag_2 != True  :
+            word = "Neither"
+        elif flag_1 == True and flag_2 !=True :
+            word  ="Bulky"
+        else :
+            word  = "Heavy"
+        return word 
+                  
+
+
+#leetcode 
+class Solution:
+    def bestHand(self, ranks: List[int], suits: List[str]) -> str:
+            output = 0
+            for i in suits:
+                if i != suits[0]:
+                    output = 1
+            if output == 0:
+                return("Flush")
+
+            for j in ranks:
+                if ranks.count(j) >= 3:
+                    return("Three of a Kind")
+
+            for k in ranks:
+                if ranks.count(k) == 2: return("Pair")
+
+            return("High Card") 
