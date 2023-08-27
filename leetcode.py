@@ -538,3 +538,44 @@ class Solution:
                 if ranks.count(k) == 2: return("Pair")
 
             return("High Card") 
+#leetcode 434 
+class Solution:
+    def countSegments(self, s: str) -> int:
+#number to hexadecimal  number 
+class Solution:
+    def toHex(self, num: int) -> str:
+        if num<0: num+=2**32
+        ans=("%x"% num)
+        return ans
+#leetcode 338 
+
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        listx  =[]
+        for i in range(0,n+1):
+            binary_num =  bin(i)
+            listx.append(str(binary_num))
+        binarylist = []
+        for i in listx  :
+            count = 0
+            for j in i :
+                if j == "1":
+                    count =  count +1 
+            binarylist.append(count)
+        return binarylist
+#leetc code bit wise numebr complement 
+class Solution:
+    def findComplement(self, num: int) -> int:
+        nums  = str(bin(num))
+        listx= []
+        print(nums)
+        for i in nums :
+            listx.append(i)
+        for i in listx: 
+            if i=="1" :
+                i ="0" 
+            elif i=="0" :
+                i  = "1"
+        s = "".join(listx)
+        print(s)
+        return int(s,2)
