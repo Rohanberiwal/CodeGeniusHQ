@@ -579,3 +579,35 @@ class Solution:
         s = "".join(listx)
         print(s)
         return int(s,2)
+#leetcode assign cookies 455
+
+class Solution:
+    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+        size   = len(g)
+        size2  = len(s)
+        count = 0
+        if(size>size2) :
+            for i in s :
+                if i in  g:
+                    count  = count +1
+                else :
+                    continue 
+        else :
+            for i in g  :
+                if i in s :
+                    count =  count +1 
+        return count  
+
+#sorting algoriihtm for 455 
+class Solution:
+    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+            g.sort()
+            s.sort()
+            i,j=0,0
+            tot=0
+            while(i<len(g) and j<len(s)):
+                if s[j]>=g[i]:
+                    i+=1
+                    tot+=1
+                j+=1
+            return tot 
