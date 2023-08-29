@@ -611,3 +611,27 @@ class Solution:
                     tot+=1
                 j+=1
             return tot 
+#base 7 question with numpy 
+import numpy as np
+class Solution:
+    def convertToBase7(self, num: int) -> str:
+            return np.base_repr(num, base=7)
+#leetcode 506
+class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+            nums =[]
+            for i in score :
+                nums.append(i)
+            listvacent = []
+            score.sort(reverse = True) 
+            print(nums)
+            for i in nums :
+                if i == score[0] :
+                    listvacent.append("Gold Medal")
+                elif i == score[1] :
+                    listvacent.append("Silver Medal")
+                elif i == score[2] :
+                    listvacent.append("Bronze Medal")
+                else:
+                    listvacent.append(str(score.index(i)+1))
+            return listvacent
