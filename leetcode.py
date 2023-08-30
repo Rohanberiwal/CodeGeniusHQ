@@ -635,3 +635,61 @@ class Solution:
                 else:
                     listvacent.append(str(score.index(i)+1))
             return listvacent
+#leetcode number of bits using power function 
+
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        return str(bin(x^y)).count('1')
+#leetcode maximum duplacite remover 229
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+        size  =int( len(nums) /3)
+        listvac= []
+        for i in nums :
+            if nums.count(i) > size and i not in listvac:
+                listvac.append(i)
+            else :
+                continue
+        return listvac
+#leetcode 2404
+class Solution:
+    def mostFrequentEven(self, nums: List[int]) -> int:
+        size =  len(nums)
+        listindex = []
+        listx = []
+        for i in nums :
+            if(i%2==0) :
+                listx.append(i)
+        for i in listx  :
+            listindex.append(count(i)) 
+        maxium =0
+        for i in listindex  :
+            if i > maxium :
+               maxium =  i
+        return listx[maxium]
+##leetcdoe lambda function 
+class Solution:
+    def mostFrequentEven(self, nums: List[int]) -> int:
+        freq = Counter(x for x in nums if x&1 == 0)
+        return min(freq, key=lambda x: (-freq[x], x), default=-1)
+#leetcode 646 doubt
+import numpy as np
+class Solution:
+    def findLongestChain(self, pairs: List[List[int]]) -> int:
+        pairs.sort() 
+        vacent =[]
+        for i in pairs :
+            vacent.append(i[-1])
+        count = 0
+        size = len(vacent)
+        for i in range(1, len(ar)):
+            if ar[i-1] >= ar[i]:
+                continue
+            else:
+                return False            
+
+             
+
+
+                
