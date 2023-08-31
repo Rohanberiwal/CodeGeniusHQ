@@ -689,7 +689,86 @@ class Solution:
             else:
                 return False            
 
-             
+
+#leetcode 2248 not with the accurate order 
+
+class Solution:
+    def intersection(self, nums: List[List[int]]) -> List[int]:
+        listx=[]
+        set1  = set(nums[0])
+        for i in nums :
+            listx.append(set(i))
+        size =  len(listx)
+        #for i in range(1,size-1) :
+        u = set.intersection(*listx)
+        return u  
+
+#leetcode 2248 
+class Solution:
+    def intersection(self, nums: List[List[int]]) -> List[int]:
+        listx=[]
+        set1  = set(nums[0])
+        for i in nums :
+            listx.append(set(i))
+        size =  len(listx)
+        u = sorted(set.intersection(*listx))
+        return u  
+#leetcode 160 Intersection of two linked list Time limit excedded errror at 35/39
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+            while headA is not None:
+                pB = headB
+                while pB is not None:
+                    if headA == pB:
+                        return headA
+                    pB = pB.next
+                headA = headA.next
+    
+            return None
+#1523 Tle 72/84
+class Solution:
+    def countOdds(self, low: int, high: int) -> int:
+        count = 0
+        while(low!=high+1):
+            if low%2 != 0 :
+                count = count +1 
+            low = low +1 
+        return count 
+#one liner using the mathemaics 
+
+class Solution:
+    def countOdds(self, low: int, high: int) -> int:
+        return (high - low) // 2 + (low%2 or high%2)
+#leetcode 2376 Work on this 
+class Solution:
+    def countSpecialNumbers(self, n: int) -> int:
+        count = 0
+        for i in range(1,n+1):
+            word = str(i)
+            for i in word  :
+                if (int)word.counter(int(i)) >1 :
+                   break 
+                else:
+                    count = count +1
+        return count  
+# leetcode 500 using the  all keyword in the keyword questions 
+
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        s1="qwertyuiop"
+        s2="asdfghjkl"
+        s3="zxcvbnm"
+        arr=[]
+        for i in words:
+            if all(c in s1 for c in i.lower()) or all(c in s2 for c in i.lower()) or all(c in s3 for c in i.lower()):
+               arr.append(i)
+
+        return arr
+        
+
+
+
 
 
                 
