@@ -765,7 +765,16 @@ class Solution:
                arr.append(i)
 
         return arr
-        
+# leetcode problem column in excel 
+import collections as cl
+
+class Solution:
+    def convertToTitle(self, num: int) -> str:
+        res = cl.deque()
+        while num:
+            res.appendleft(chr((num-1)%26 + 65))
+            num = (num-1) // 26
+        return ''.join(res)        
 
 
 
