@@ -776,6 +776,74 @@ class Solution:
             num = (num-1) // 26
         return ''.join(res)        
 
+#leetcode 1822 
+
+class Solution:
+    def arraySign(self, nums: List[int]) -> int:
+        index = -1 
+        product  = 1
+        for i in nums :
+            product = product * i
+        if product>1 :
+            index  = 1 
+        elif product == 0 :
+            index  = 0
+        else :
+            index  = -1 
+        return index 
+#leetcode 2769 maximum achineveable number
+class Solution:
+    def theMaximumAchievableX(self, num: int, t: int) -> int:
+        return num+2*t
+        
+#leetcode 476 asn 1009 same question 
+
+num_b = bin(num)[2:]
+        res = ''
+        for bit in num_b:
+            print(type(bit))
+            res += '1' if bit == '0' else '0'        
+        return int(res, 2)
+            
+#leetcode 
+class Solution:
+    def average(self, salary: List[int]) -> float :
+        top = max(salary)
+        down =  min(salary) 
+        sum = 0
+        for i in salary :
+            sum  = sum + i 
+        sum   = sum-(top+down)
+        size  = len(salary) -2
+        return float(sum/size)
+
+#leetcode 1418 
+
+class Solution:
+    def getMinDistance(self, nums: List[int], target: int, start: int) -> int:
+        listx=  []
+        for i in range(len(nums)):
+            if nums[i] == target:
+                listx.append(i)
+        return min(abs(i - start) for i in listx)
+
+#leetcode 520 using inbuilt functions 
+class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+        return word.isupper() or word.islower() or word.istitle()
+        
+#leetcode capatlisize 
+
+         l = []
+        for i in list(title.split()): 
+            if len(i) > 2:
+                l.append(i.capitalize())
+            else:
+                l.append(i.lower())
+        return ' '.join(l)
+
+
+
 
 
 
