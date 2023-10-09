@@ -852,9 +852,32 @@ class Solution:
             if nums[i]==target :
                 listnew.append(i)
         return listnew
+# 551 error 
+class Solution:
+    def checkRecord(self, s: str) -> bool:
+        late = 1
+        absent  =0 
+        listvac  =[]
+        for i in s :
+            listvac.append(i)
+        print(listvac)
+        for i in listvac:
+            if i =="A" :
+                absent = absent+1 
+        for i in range(0,len(listvac))  :
+            if i!=len(listvac)-1 :
+                if listvac[i] == "L" and listvac[i+1] =="L" :
+                    late  = late +1
+            else : 
+                if listvac[i]== "L" and listvac[i-1]== "L" :
+                   late = 3
+        print(late)
+        if absent <2 and late <3  :
+           
+            return True 
+        else :
+            return False 
             
-
-
 
 
 
