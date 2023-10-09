@@ -842,6 +842,17 @@ class Solution:
                 l.append(i.lower())
         return ' '.join(l)
 
+#sortinmg 278 
+class Solution:
+    def targetIndices(self, nums: List[int], target: int) -> List[int]:
+        listnew =  []
+        nums.sort()
+        size  = len(nums)
+        for i in range(0,size):
+            if nums[i]==target :
+                listnew.append(i)
+        return listnew
+            
 
 
 
