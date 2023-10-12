@@ -1,3 +1,32 @@
+#revese string 11 
+class Solution:
+    def reverseStr(self, s: str, k: int) -> str:
+        s = list(s)
+        for i in range(0,len(s),2*k):
+            s[i:i+k] = reversed(s[i:i+k])
+        return "".join(s) 
+        
+# 345 leetcode 
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        listrandom = []
+        for i in s  :
+            listrandom.append(i)
+        set1 = {"a", "e", "i", "o", 'u'}
+        i = 0
+        j = len(listrandom) - 1
+        while i < j:
+            if listrandom[i].lower() in set1 and listrandom[j].lower() in set1:
+                listrandom[i], listrandom[j] = listrandom[j], listrandom[i]
+                i += 1
+                j -= 1
+            elif listrandom[i].lower() in set1:
+                j -= 1
+            else:
+                i += 1
+
+        return "".join(listrandom)
+
 # leetcode question integer to roman numerals 
 
 class Solution:
