@@ -1,3 +1,13 @@
+#leetcode capatlisize 
+
+         l = []
+        for i in list(title.split()): 
+            if len(i) > 2:
+                l.append(i.capitalize())
+            else:
+                l.append(i.lower())
+        return ' '.join(l)
+        
 #revese string 11 
 class Solution:
     def reverseStr(self, s: str, k: int) -> str:
