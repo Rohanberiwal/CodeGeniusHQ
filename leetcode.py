@@ -1,3 +1,166 @@
+Binary tree and search tree
+# Definition for a binary tree node.
+#Leetcode  111
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+
+        queue = [(root, 1)]
+
+        while queue:
+            node, depth = queue.pop(0)
+
+            if not node.left and not node.right:
+                return depth
+
+            if node.left:
+                queue.append((node.left, depth + 1))
+
+            if node.right:
+                queue.append((node.right, depth + 1))
+
+#Level order traversal Breadth frist search 
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        listextra = []
+        listnew = []
+        if not root:
+            return listnew
+
+        result = []
+        queue = [root]
+
+        while queue:
+            listextra = []
+            listnew = []
+
+            for node in queue:
+                listextra.append(node.val)
+                if node.left:
+                   listnew.append(node.left)
+                if node.right:
+                   listnew.append(node.right)
+
+            result.append(listextra)
+            queue = listnew
+
+        return result
+#averages of a bst 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
+        listextra  = []
+        listnew  = []
+        if root is None :
+            return []
+        result = []
+        queue  =[root]
+        while queue  :
+            listextra = []
+            listnew  = []
+            for i in queue  :
+                listextra.append(i.val)
+                if i.left  :
+                    listnew.append(i.left)
+                if i.right  :
+                    listnew.append(i.right)
+            result.append(listextra)
+            queue  = listnew 
+        print(result)
+        listaverage = []
+        for i in result :
+            if len(i)==0:
+                listaverage.append(0)
+            else  :
+                average  = sum(i)/len(i)
+                listaverage.append(average)
+        return listaverage
+# N-ary Level order 
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def levelOrder(self, root: 'Node') -> List[List[int]]:
+        listextra  = []
+        listnew  = []
+        if root is None:
+            return []
+
+        result = []
+        queue = [root]
+
+        while queue:
+            listextra = []
+            listnew = []
+
+            for node in queue:
+                listextra.append(node.val) 
+                
+                for child in node.children:
+                    print(child)
+                    listnew.append(child)
+
+            result.append(listextra)
+            queue = listnew
+
+        return result
+#BST 
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def kthLargestLevelSum(self, root: Optional[TreeNode], k: int) -> int:
+            listextra = []
+            listnew  = []
+            if root is None   :
+                return  0
+            result = []
+            queue   = [root] 
+            while queue :
+                listextra  = []
+                listnew  = []
+                for node in queue :
+                    listextra.append(node.val)
+                    if node.left :
+                        listnew.append(node.left)
+                    if node.right :
+                        listnew.append(node.right)
+                result.append(listextra)
+                queue  = listnew
+            print(result)  
+            maximum = float('-inf')
+            indexed = 0
+            listnums = []
+            for i in range(0,len (result)):
+                nums =  sum(result[i])
+                listnums.append(nums)
+            maximum  = float("-inf")
+            listnums.sort()
+            print(listnums)
+            if k>len(listnums):
+                return -1
+            else :
+                return listnums[-(k)]
 #leetcode capatlisize 
 
          l = []
