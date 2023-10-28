@@ -1,0 +1,32 @@
+Fenwick Tree(BIT Algorithm)
+This is the index treen with the functions of query , update  . 
+This tree allows the user to do the update operatyion in the log(n) time complexity and the sum operation in the log(n) which in the normal cases is done in o(n) and o(n) respectively .
+
+Important key : 
+1) To create  the fenwick tree the power of two is used  .
+2) In this take the index from -> 1 to len(array) .
+3) Now in the binary represenation of the index , turn the most significant bit , flip it for 1-> 0+1 , 10->00+1  ,  11->01+1. 
+In the number > 2 the rightmost bit is flipped  . 
+The format for the min(bit flipped output +1, index) . 
+The flipping of  the respective bits has to be done in such a way that the bit len(flipped nums)!> the actual bits len . that is why in the 5 -> 101 the rightmost is flipped  . Also the flipping sequence goes from right to left , where ever u encounter ->1 just flip it  . 
+
+Motivation  :
+Drop / flip first 1 bit in the binary nums while going from right to left .  
+
+The index that are changed or those sequences where the min(flipped != nums , nums) those will be changed rest willbe the same . 
+The seqence for the upattion are fixed  .
+This algorithm is used to find the cost of for sorting the array  , 
+The point where the algoithnm nedd a update , just update the index and the value for that index ,the algo would do the updat6ion int the log(n) time automaticlly .  
+
+The updation line for the index upation is the 
+i = i +(i & (-i))
+ which is eventuallty  the two complement of the binary i  . 
+
+
+Sum of array elemnt in a 16 size array from the index  0  -> 12
+using the fenwick bit tree
+the arraysum for index 0-`12 :
+1) 12-0 = 8+ 4 (power of 2 conversion).
+2 ) sum(12-0)  = sum(1-8) + sum(9-12) .
+3) 14  -> 8+4 +2 
+3) sum (13-indexed) = sum(8) + sum (4) + sum(2) 
