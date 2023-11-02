@@ -1,0 +1,26 @@
+A lexicographically smallest subsequence is a subsequence (a sequence of characters obtained by deleting some or none of the characters from the original sequence) that is formed by selecting characters from the original sequence in such a way that the resulting subsequence is the smallest when compared in lexicographical order. In other words, it's the subsequence where the characters are selected in the order they appear in the original sequence, but it's minimized in length.
+
+Let's break this down into a more detailed explanation:
+
+Lexicographical Order: In lexicographical order, strings are compared character by character, starting from the leftmost character. The string that has the smallest character at the first differing position is considered smaller.
+
+Subsequence: A subsequence is a sequence derived from another sequence by deleting some elements without changing the order of the remaining elements. For example, in the sequence "abc", "ab" and "ac" are valid subsequences, while "ca" is not.
+
+Lexicographically Smallest Subsequence: To find the lexicographically smallest subsequence, we start with the first character in the original sequence and continue selecting characters in order as long as they don't violate the lexicographical order. If we encounter a character that is smaller than the last character in the subsequence, we can remove the last character and replace it with the smaller character, thus minimizing the subsequence length. This process continues until we've processed the entire original sequence.
+
+Example:
+
+Original Sequence: "bcabc"
+Lexicographically Smallest Subsequence: "abc"
+We start with 'b', then 'c' (which is smaller than 'b'), then 'a' (which is smaller than 'c'). When 'b' comes again, we replace it with 'a' to get "abc," which is the lexicographically smallest subsequence.
+
+Here's an algorithm for finding the lexicographically smallest subsequence:
+
+Initialize an empty result string.
+Iterate through the original sequence.
+For each character in the sequence, check if it is smaller than the last character in the result string and that character exists later in the original sequence.
+If both conditions are met, replace the last character in the result string with the smaller character.
+Continue this process until you've processed the entire original sequence.
+The lexicographically smallest subsequence is formed by the characters remaining in the result string. This process ensures that the characters are selected in the order they appear in the original sequence while keeping the length of the subsequence to a minimum.
+
+This concept is often used in various string manipulation and optimization problems, and algorithms to find the lexicographically smallest subsequence can be implemented with different data structures, such as stacks or arrays, depending on the specific problem's requirements.
