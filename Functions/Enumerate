@@ -1,0 +1,21 @@
+The enumerate function is a built-in function that is used to iterate through an iterable 
+(e.g., a list, tuple, or string) while keeping track of the index (position) of the current item. 
+It's particularly useful when you want to access both the index and the value of each element in an iterable within a loop
+
+iterable is the collection you want to iterate through.
+index is a variable that represents the current index (starting from 0 for the first element).
+value is a variable that represents the current element in the iterable.
+Here are some common use cases for enumerate:
+
+Accessing Both Index and Value: As mentioned, the primary use of enumerate is to access both
+the index and the value of each element in an iterable within a loop.
+
+Example :
+fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits):
+    print(f"Index {index}: {fruit}")
+
+Output :
+Index 0: apple
+Index 1: banana
+Index 2: cherry
