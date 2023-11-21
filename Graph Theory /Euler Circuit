@@ -1,0 +1,30 @@
+In graph theory, an Eulerian circuit (or Eulerian cycle) is a circuit that
+traverses every edge of a graph exactly once and returns to the starting node. 
+If a graph has an Eulerian circuit, it is called an Eulerian graph. The concept is
+named after the Swiss mathematician Leonhard Euler, who first studied and solved the
+Seven Bridges of Königsberg problem, laying the foundation for graph theory.
+
+Key properties of Eulerian circuits:
+
+Even Degree Condition:
+
+A connected graph has an Eulerian circuit if and only if every vertex has an even degree 
+(degree being the number of edges incident to a vertex). If a graph has exactly two vertices
+with odd degrees, it has an Eulerian path but not an Eulerian circuit.
+Eulerian Circuit Algorithm:
+
+Eulerian circuits can be found using algorithms that traverse edges in a way 
+that covers all edges exactly once. The Hierholzer's algorithm is commonly used for this purpose. 
+It constructs an Eulerian circuit by combining Eulerian paths in the graph.
+Eulerian Graph Types:
+
+There are different types of Eulerian graphs:
+Semi-Eulerian Graph: A connected graph with exactly two vertices of odd degree.
+It has an Eulerian path but not an Eulerian circuit.
+Eulerian Multigraph: A graph that may have multiple edges between the same pair of vertices.
+Eulerian Digraph: A directed graph with an Eulerian circuit if and only if, for each vertex, the in-degree equals the out-degree.
+Applications:
+
+Eulerian circuits and paths have applications in network design, transportation planning, 
+and fault-tolerant systems. For example, in computer networks, the design of circuits that
+traverse every link exactly once is crucial for efficient data transmission.
