@@ -1,0 +1,23 @@
+The concept of dual graphs is closely related to planar graphs.
+The dual graph of a planar graph is obtained by associating a face of
+the planar graph with each vertex of the dual graph. There are different 
+algorithms to construct the dual graph of a planar graph. One common approach
+involves the use of planar embeddings and the concept of faces.
+
+Here's a high-level algorithm to construct the dual graph of a planar graph:
+
+Input:
+
+Start with a planar graph 
+
+G with a planar embedding.
+Create Faces:
+
+Traverse the edges of the planar graph in a counterclockwise direction 
+around each face. For each face, create a corresponding vertex in the dual graph.
+Connect Adjacent Faces:
+
+For every pair of adjacent faces in the planar graph, add an edge between their corresponding vertices in the dual graph.
+Result:
+
+The resulting graph is the dual graph of the original planar graph.
