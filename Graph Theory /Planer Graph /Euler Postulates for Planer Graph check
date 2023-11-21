@@ -1,0 +1,48 @@
+
+Euler's formula is a fundamental result in graph theory, and it 
+relates the number of vertices, edges, and faces in a planar graph.
+The formula is named after the Swiss mathematician Leonhard Euler, 
+who first formulated it in the 18th century. Euler's formula for planar graphs can be stated as:
+
+V−E+F=2
+
+Here are the key postulates and concepts associated with Euler's formula:
+
+Vertices (V):
+
+
+V represents the number of vertices in the planar graph.
+Edges (E):
+
+
+E represents the number of edges in the planar graph.
+Faces (F):
+
+
+F represents the number of faces in the planar graph, including the unbounded outer face.
+Euler's Formula:
+
+The formula states that for any connected planar graph, the difference between the number of vertices (
+
+V−E+F=2.
+Planar Graph:
+
+Euler's formula applies specifically to connected planar graphs, 
+which are graphs that can be drawn in the plane without any edge intersections.
+Euler Characteristic (
+χ):
+
+Euler's formula is often expressed in terms of the Euler characteristic (
+
+χ=V−E+F.
+For any connected planar graph, 
+
+χ is equal to 2.
+Polyhedron:
+
+Euler's formula is also applicable to convex polyhedra (3D solids with flat faces). For a convex polyhedron, 
+
+V−E+F=2.
+Kuratowski's Theorem:
+
+Euler's formula is closely related to Kuratowski's theorem, which characterizes planar graphs by excluding certain subgraphs.
