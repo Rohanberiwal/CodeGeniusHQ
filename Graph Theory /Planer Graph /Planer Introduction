@@ -1,0 +1,32 @@
+A planar graph is a graph that can be embedded in the plane in such a way that no edges 
+intersect except at their endpoints. In other words, it can be drawn on a flat surface (like a piece of paper) 
+without any edges crossing each other.
+
+Key Concepts:
+Planar Embedding:
+
+A planar embedding of a graph is a specific way of drawing the graph in the plane without any edge intersections.
+Faces:
+
+In a planar embedding, the plane is divided into regions called "faces."
+There is an "outer face" (the unbounded region outside the graph), and the other faces are bounded by edges of the graph.
+Euler's Formula:
+
+For a connected planar graph with 
+
+v−e+f=2.
+Kuratowski's Theorem:
+
+A graph is planar if and only if it does not contain a subgraph that is a subdivision of 
+
+  (complete graph on 5 vertices) or 
+
+​
+  (complete bipartite graph on sets of 3 vertices).
+Graph Drawing:
+Graphs that can be drawn without any edge intersections are called "planar graphs."
+
+Planar graphs have applications in circuit design, network layout, and geographical mapping.
+The concept of planarity is also important in graph theory and topology.
+In summary, planar graphs have interesting properties and applications, and 
+determining their planarity is a topic of study in graph theory.
