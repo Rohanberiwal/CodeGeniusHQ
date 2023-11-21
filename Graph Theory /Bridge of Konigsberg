@@ -1,0 +1,24 @@
+The Bridges of Königsberg is a famous problem in the
+history of mathematics and graph theory, first solved by the Swiss mathematician Leonhard Euler in 1736.
+The problem is set in the city of Königsberg (now Kaliningrad, Russia), which is situated on both sides of 
+the Pregel River and includes two large islands connected by seven bridges.
+
+The problem can be described as follows:
+
+The city of Königsberg is divided into four landmasses: two large islands and the mainland on either side of the Pregel River.
+
+Seven bridges connect these landmasses, with two on one island, four on the mainland, and one on the other island.
+
+The challenge is to find a walk through the city that crosses each bridge exactly once and returns to the starting point.
+
+Leonhard Euler approached this problem by abstracting it into a graph theory context, representing 
+the landmasses as nodes (vertices) and the bridges as edges. Euler's solution involved analyzing the degree
+(number of edges incident to a vertex) of each landmass. He discovered that for a walk to exist as described,
+each landmass needed to have an even degree, except for possibly two landmasses, which could have an odd degree.
+
+In the case of Königsberg, all four landmasses had an odd degree, making it impossible to find such a walk. 
+Euler's conclusion laid the foundation for the development of graph theory.
+
+The Bridges of Königsberg problem is often cited as the starting point for the field of graph theory, which has
+since become a fundamental area of study in mathematics and computer science. Euler's insights into this problem 
+led to the creation of graph theory concepts such as Eulerian paths and circuits, which are essential in understanding the properties of graphs and networks.
