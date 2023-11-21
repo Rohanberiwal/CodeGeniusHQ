@@ -1,0 +1,36 @@
+Kuratowski's Theorem: An Introduction
+
+Kuratowski's theorem, named after the Polish mathematician Kazimierz Kuratowski, is a fundamental result in graph theory. The theorem characterizes planar graphs by identifying specific subgraphs that must not be present in a graph for it to be planar. In essence, the theorem provides a necessary and sufficient condition for a graph to be planar.
+
+Statement of Kuratowski's Theorem:
+
+A graph is planar if and only if it does not contain a subgraph that is a subdivision of either the complete graph 
+  (a complete graph on five vertices) or the complete bipartite graph 
+​
+  (a complete bipartite graph on sets of three vertices).
+
+Implications of Kuratowski's Theorem:
+
+Planarity Characterization:
+
+Kuratowski's theorem offers a way to check for planarity without having to search for a specific planar embedding.
+Algorithmic Testing:
+
+The theorem provides a basis for algorithmic approaches to test whether a graph is planar. Algorithms based on Kuratowski's theorem can efficiently determine the planarity of a graph by searching for forbidden subgraphs.
+Algorithmic Approach for Planarity Testing:
+
+One way to algorithmically test for planarity based on Kuratowski's theorem is through the following steps:
+
+Search for 
+
+
+Begin by searching for subgraphs that are subdivisions of 
+
+​
+  within the given graph.
+Identification of Forbidden Subgraphs:
+​
+  is found as a subgraph, the graph is non-planar.
+Planar Graph Otherwise:
+
+If neither is found, the graph is planar.
