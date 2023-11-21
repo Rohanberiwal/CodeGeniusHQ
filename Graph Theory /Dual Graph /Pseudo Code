@@ -1,0 +1,18 @@
+function constructDualGraph(planarGraph):
+    dualGraph = new Graph()
+
+    for each face in planarGraph.faces:
+        dualVertex = createVertex(dualGraph)
+        setCorrespondingFace(dualVertex, face)
+
+    for each edge in planarGraph.edges:
+        face1 = edge.face1
+        face2 = edge.face2
+
+        dualVertex1 = getCorrespondingVertex(face1)
+        dualVertex2 = getCorrespondingVertex(face2)
+
+        if dualVertex1 != dualVertex2:  // Avoid duplicate edges
+            createEdge(dualGraph, dualVertex1, dualVertex2)
+
+    return dualGraph
