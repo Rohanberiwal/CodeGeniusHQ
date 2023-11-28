@@ -1,0 +1,14 @@
+Kruskal's algorithm, on the other hand, builds the minimum spanning 
+tree by considering all edges in the graph, sorted by weight. It adds the
+edges to the minimum spanning tree in ascending order of weight, avoiding the creation of cycles in the process.
+
+Here's a high-level overview of Kruskal's algorithm:
+
+Sort all edges in non-decreasing order of their weight.
+Initialize an empty minimum spanning tree.
+Iterate through the sorted edges and add each edge to the minimum spanning tree if it doesn't create a cycle.
+Repeat step 3 until the minimum spanning tree has 
+
+n−1 edges (where 
+
+n is the number of vertices).
