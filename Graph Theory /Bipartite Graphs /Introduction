@@ -1,0 +1,28 @@
+A bipartite graph is a type of graph in which the set of vertices can be divided into two disjoint sets such that no two vertices within the same set are adjacent. In other words, a bipartite graph is a graph whose vertices can be colored with two colors in such a way that no two adjacent vertices have the same color.
+
+Formally, a graph 
+G=(V,E) is bipartite if there exists a partition of its vertex set 
+V into two disjoint sets 
+V−U such that every edge in 
+E has one end in 
+U and the other end in 
+V−U.
+
+Mathematically, a graph 
+G is bipartite if and only if it is possible to assign one of two different colors to each vertex 
+in such a way that no two adjacent vertices have the same color. This can be expressed as a coloring function 
+f:V→{0,1}, where 
+
+Bipartite graphs have several interesting properties and are widely used in various applications, including:
+Matching Problems: Bipartite graphs are often used to model matching problems, where the goal is to find pairs of connected vertices with no common neighbors.
+
+Network Flow: In network flow problems, bipartite graphs are used to model flow networks where resources flow from one set of nodes to another.
+
+Social Networks: In social network analysis, bipartite graphs can represent relationships between two different types of entities, such as users and events.
+
+Scheduling: Bipartite graphs can be used to model scheduling problems where tasks need to be assigned to workers or machines.
+
+Coding Theory: In coding theory, bipartite graphs are used to model relationships between code words and error patterns.
+
+One classic example of a bipartite graph is the marriage problem, where you have a group of men and women, 
+and the edges represent potential marriages, with the goal of finding a set of non-overlapping marriages.
