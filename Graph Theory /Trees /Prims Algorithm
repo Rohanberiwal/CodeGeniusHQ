@@ -1,0 +1,21 @@
+Prim's Algorithm:
+Prim's algorithm starts with an arbitrary vertex and grows
+the minimum spanning tree one vertex at a time. At each step, it selects '
+the edge with the minimum weight that connects a vertex in the growing minimum spanning tree 
+to a vertex outside the tree. This process continues until all vertices are included in the minimum spanning tree.
+
+Here's a high-level overview of Prim's algorithm:
+
+Procedure for the prims algorithm 
+Start with an arbitrary vertex.
+Select the edge with the minimum weight that connects a vertex in the current minimum spanning tree to a vertex outside the tree.
+Add the selected edge and the connected vertex to the minimum spanning tree.
+Repeat steps 2-3 until all vertices are included in the minimum spanning tree.
+Time Complexity:
+
+Prim's: 
+O((V+E)logV) with an adjacency list using a priority queue.
+Prim's: 
+Space Complexity  :
+O(V) for the priority queue or 
+O(1) with a simple array.
